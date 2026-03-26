@@ -4,7 +4,7 @@ nodeName: "Распознавание речи"
 nodeType: "FUNCTION"
 position:
   x: 700
-  "y": 100
+  y: 100
 nextStep: "state_4"
 parameters: !<FUNCTION>
   functionId: "system.Asr.recognize"
