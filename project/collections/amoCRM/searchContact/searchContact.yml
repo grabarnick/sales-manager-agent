@@ -1,0 +1,9 @@
+---
+name: "searchContact"
+collectionName: "amoCRM"
+description: "Поиск контактов в AmoCRM"
+parameters:
+  - name: "query"
+    type: "STRING"
+    required: true
+    description: "Имя, телефон или email для поиска"

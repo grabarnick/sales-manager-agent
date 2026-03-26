@@ -1,0 +1,11 @@
+---
+id: "state_2"
+nodeName: "Проверка на голос"
+nodeType: "CONDITION"
+position:
+  x: 400
+  y: 200
+nextStep: "state_3"
+parameters: !<CONDITION>
+  condition: "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
+  falseStep: "state_4"

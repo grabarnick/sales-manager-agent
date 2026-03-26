@@ -1,0 +1,27 @@
+---
+id: "state_4"
+nodeName: "Sales Ассистент"
+nodeType: "AGENT"
+position:
+  x: 1000
+  y: 200
+nextStep: "state_5"
+parameters: !<AGENT>
+  systemPromts:
+    role: "Профессиональный ассистент sales-менеджера в AmoCRM"
+    goal: "Помогать менеджеру управлять сделками, контактами и задачами."
+    instructions: |
+      1. Поиск: используй amoCRM.searchContact для поиска информации.
+      2. Сделки: используй amoCRM.createLead для создания новых сделок.
+      3. ЗАДАЧИ: Если менеджер просит напомнить или запланировать звонок/встречу, используй amoCRM.createTask.
+      4. Отвечай кратко. Если сообщение было голосовым, текст уже передан тебе.
+    queryOverride: "{{ Context.getLastFunctionResult() || Context.getMessageContent().text }}"
+  llmModelKey: "gpt-4o"
+  tools:
+    - "amoCRM.searchContact"
+    - "amoCRM.createLead"
+    - "amoCRM.createTask"
+  llmSettings:
+    maxTokens: 4000
+    temperature: 0.7
+  enableContext: true
