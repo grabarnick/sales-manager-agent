@@ -1,0 +1,20 @@
+---
+id: "state_6"
+nodeName: "AgentContext.addNote"
+nodeType: "FUNCTION"
+position:
+  x: 878
+  "y": 357
+nextStep: null
+parameters: !<FUNCTION>
+  functionId: "acd8314ae0819f2e2089d060"
+  isTool: true
+  isSystem: true
+  parameters:
+    text: !<STRING>
+      value: null
+      filledAi: true
+    agentId: !<STRING>
+      value: null
+      filledAi: true
+  contextConfig: null

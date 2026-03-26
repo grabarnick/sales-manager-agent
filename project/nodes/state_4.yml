@@ -1,0 +1,10 @@
+---
+id: "state_4"
+nodeName: "IMAP Email"
+nodeType: "TRIGGER_IMAP"
+position:
+  x: 517
+  "y": 512
+nextStep: null
+parameters: !<TRIGGER_IMAP>
+  filterRule: null
