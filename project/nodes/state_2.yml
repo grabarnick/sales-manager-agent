@@ -4,9 +4,8 @@ nodeName: "Проверка на голос"
 nodeType: "CONDITION"
 position:
   x: 400
-  y: 200
-nextStep: "state_3"
+  "y": 200
+nextStep: null
 parameters: !<CONDITION>
   condition: "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
-  trueStep: "state_3"
-  falseStep: "state_4"
+  falseStep: null

@@ -4,24 +4,36 @@ nodeName: "Sales Ассистент"
 nodeType: "AGENT"
 position:
   x: 1000
-  y: 200
-nextStep: "state_5"
+  "y": 200
+nextStep: null
 parameters: !<AGENT>
   systemPromts:
     role: "Профессиональный ассистент sales-менеджера в AmoCRM"
     goal: "Помогать менеджеру управлять сделками, контактами и задачами."
-    instructions: |
-      1. Поиск: используй amoCRM.searchContact для поиска информации.
-      2. Сделки: используй amoCRM.createLead для создания новых сделок.
-      3. ЗАДАЧИ: Если менеджер просит напомнить или запланировать звонок/встречу, используй amoCRM.createTask.
-      4. Отвечай кратко. Если сообщение было голосовым, текст уже передан тебе.
-    queryOverride: "{{ Context.getLastFunctionResult() || Context.getMessageContent().text }}"
-  llmModelKey: "gpt-4o"
-  tools:
-    - "amoCRM.searchContact"
-    - "amoCRM.createLead"
-    - "amoCRM.createTask"
+    instructions: "1. Поиск: используй amoCRM.searchContact для поиска информации\
+      .\n2. Сделки: используй amoCRM.createLead для создания новых сделок.\n3. ЗАД\
+      АЧИ: Если менеджер просит напомнить или запланировать звонок/встречу, исполь\
+      зуй amoCRM.createTask.\n4. Отвечай кратко. Если сообщение было голосовым, те\
+      кст уже передан тебе.\n"
+    queryOverride: "{{ Context.getLastFunctionResult() || Context.getMessageContent().text\
+      \ }}"
   llmSettings:
     maxTokens: 4000
     temperature: 0.7
+    topP: 0.0
+    frequencyPenalty: 0.0
+    presencePenalty: 0.0
+    verboseMode: false
+  llmModelKey: null
+  tools:
+  - "amoCRM.searchContact"
+  - "amoCRM.createLead"
+  - "amoCRM.createTask"
+  handoffAgents:
+    allowedAny: false
+    allowedAgentNodeIds: []
+  stayInAgent: false
+  telephonyConfig: null
   enableContext: true
+  chatHistoryLimit: 50
+  sequentialToolCallsLimit: 5

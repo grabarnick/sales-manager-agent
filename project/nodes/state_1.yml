@@ -4,7 +4,7 @@ nodeName: "Входящее сообщение"
 nodeType: "TRIGGER_MESSAGE"
 position:
   x: 100
-  y: 200
-nextStep: "state_2"
+  "y": 200
+nextStep: null
 parameters: !<TRIGGER_MESSAGE>
   placeholder: null
