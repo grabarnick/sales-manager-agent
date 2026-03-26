@@ -1,0 +1,16 @@
+name: "amoCRM"
+collectionName: "amoCRM"
+description: "Интеграция с AmoCRM (v3)"
+parameters:
+  - name: "action"
+    type: "STRING"
+    required: true
+    description: "searchContact или createLead"
+  - name: "query"
+    type: "STRING"
+    required: false
+    description: "Для поиска"
+  - name: "leadData"
+    type: "OBJECT"
+    required: false
+    description: "Для создания сделки"

@@ -1,32 +1,8 @@
----
 id: "state_5"
-nodeName: "Агент"
-nodeType: "AGENT"
-position:
-  x: 978
-  "y": 59
-nextStep: null
-parameters: !<AGENT>
-  systemPromts:
-    role: "agent role"
-    goal: "agent goal"
-    instructions: "instructions"
-    queryOverride: ""
-  llmSettings:
-    maxTokens: 4000
-    temperature: 0.6
-    topP: 1.0
-    frequencyPenalty: 0.0
-    presencePenalty: 0.0
-    verboseMode: true
-  llmModelKey: "1000001-open_ai_gpt5mini-jbh"
-  tools:
-  - "state_6"
-  handoffAgents:
-    allowedAny: false
-    allowedAgentNodeIds: []
-  stayInAgent: false
-  telephonyConfig: null
-  enableContext: true
-  chatHistoryLimit: 50
-  sequentialToolCallsLimit: 5
+nodeName: "Ответ пользователю"
+nodeType: "FUNCTION"
+position: { x: 1300, "y": 200 }
+parameters: !<FUNCTION>
+  functionName: "Reactions.sendText"
+  parameters:
+    text: "{{ Context.getLastFunctionResult() }}"
