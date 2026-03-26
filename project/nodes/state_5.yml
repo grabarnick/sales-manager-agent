@@ -1,0 +1,11 @@
+---
+id: "state_5"
+nodeName: "Ответ пользователю"
+nodeType: "FUNCTION"
+position:
+  x: 1300
+  "y": 200
+parameters: !<FUNCTION>
+  functionName: "Reactions.sendText"
+  parameters:
+    text: "{{ Context.getLastFunctionResult() }}"

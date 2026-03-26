@@ -5,7 +5,7 @@ nodeType: "CONDITION"
 position:
   x: 400
   "y": 200
-nextStep: null
+nextStep: "state_3"
 parameters: !<CONDITION>
   condition: "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
-  falseStep: null
+  falseStep: "state_4"

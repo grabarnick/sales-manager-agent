@@ -1,0 +1,13 @@
+---
+id: "state_3"
+nodeName: "Распознавание речи"
+nodeType: "FUNCTION"
+position:
+  x: 700
+  "y": 100
+nextStep: "state_4"
+parameters: !<FUNCTION>
+  functionName: "Asr.recognize"
+  parameters:
+    asrIntegrationKey: "openai_whisper"
+    audioUrl: "{{ Context.getMessageContent().files.find(f => f.type === 'audio').url }}"
