@@ -1,0 +1,17 @@
+---
+id: "state_7"
+nodeName: "exampleFunction"
+nodeType: "FUNCTION"
+position:
+  x: 616
+  "y": -2
+nextStep: "state_5"
+parameters: !<FUNCTION>
+  functionId: "69c523158a4bc74c25b14a23"
+  isTool: false
+  isSystem: false
+  parameters:
+    testNumber: !<NUMBER>
+      value: null
+      filledAi: false
+  contextConfig: null

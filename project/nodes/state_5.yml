@@ -8,18 +8,18 @@ position:
 nextStep: null
 parameters: !<AGENT>
   systemPromts:
-    role: null
-    goal: null
-    instructions: null
-    queryOverride: null
+    role: "agent role"
+    goal: "agent goal"
+    instructions: "instructions"
+    queryOverride: ""
   llmSettings:
-    maxTokens: null
+    maxTokens: 4000
     temperature: 0.6
     topP: 1.0
     frequencyPenalty: 0.0
     presencePenalty: 0.0
     verboseMode: true
-  llmModelKey: null
+  llmModelKey: "1000001-open_ai_gpt5mini-jbh"
   tools:
   - "state_6"
   handoffAgents:
