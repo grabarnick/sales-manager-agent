@@ -8,4 +8,5 @@ position:
 nextStep: "state_3"
 parameters: !<CONDITION>
   condition: "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
+  trueStep: "state_3"
   falseStep: "state_4"
