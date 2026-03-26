@@ -1,0 +1,11 @@
+{
+  "amoCRM": {
+    "description": "Интеграция с AmoCRM (поиск и создание сделок/контактов)",
+    "parameters": {
+      "action": "string (searchContact | createLead)",
+      "query": "string (для поиска)",
+      "leadData": "object (для создания)"
+    },
+    "code": "const auth = await Credentials.get('amocrm_oauth');\nconst baseUrl = `https://${auth.name}.amocrm.ru/api/v4`;\n\nif (action === 'searchContact') {\n  return Http.get({\n    url: `${baseUrl}/contacts`,\n    params: { query },\n    headers: { Authorization: `Bearer ${auth.token}` }\n  }).then(res => JSON.parse(res.body)._embedded?.contacts || []);\n}\n\nif (action === 'createLead') {\n  return Http.post({\n    url: `${baseUrl}/leads`,\n    body: [leadData],\n    headers: { Authorization: `Bearer ${auth.token}` }\n  }).then(res => JSON.parse(res.body)._embedded?.leads[0] || null);\n}\n\nreturn { error: 'Unknown action' };"
+  }
+}

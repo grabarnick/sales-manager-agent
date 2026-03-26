@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "nodeName": "Входящее сообщение",
+      "nodeType": "TRIGGER_MESSAGE",
+      "position": { "x": 100, "y": 200 },
+      "nextStep": "check_voice"
+    },
+    {
+      "id": "check_voice",
+      "nodeName": "Проверка на голос",
+      "nodeType": "CONDITION",
+      "position": { "x": 400, "y": 200 },
+      "parameters": {
+        "condition": "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
+      },
+      "nextStep": "transcribe",
+      "falseStep": "sales_assistant"
+    },
+    {
+      "id": "transcribe",
+      "nodeName": "Распознавание речи",
+      "nodeType": "FUNCTION",
+      "position": { "x": 700, "y": 100 },
+      "parameters": {
+        "functionName": "Asr.recognize",
+        "asrIntegrationKey": "openai_whisper",
+        "audioUrl": "{{ Context.getMessageContent().files.find(f => f.type === 'audio').url }}"
+      },
+      "nextStep": "sales_assistant"
+    },
+    {
+      "id": "sales_assistant",
+      "nodeName": "Sales Ассистент",
+      "nodeType": "AGENT",
+      "position": { "x": 1000, "y": 200 },
+      "parameters": {
+        "systemPromts": {
+          "role": "Профессиональный ассистент sales-менеджера в AmoCRM",
+          "goal": "Помогать менеджеру управлять сделками и контактами через AmoCRM.",
+          "instructions": "1. Если менеджер просит найти кого-то, используй инструмент amoCRM с action: searchContact.\n2. Если менеджер хочет создать сделку, уточни данные и используй amoCRM с action: createLead.\n3. Отвечай кратко и по делу.\n4. Если сообщение было голосовым, текст уже распознан и передан тебе."
+        },
+        "llmModelKey": "gpt-4o",
+        "tools": ["amoCRM"],
+        "queryOverride": "{{ Context.getLastFunctionResult() || Context.getMessageContent().text }}"
+      },
+      "nextStep": "final_reply"
+    },
+    {
+      "id": "final_reply",
+      "nodeName": "Ответ пользователю",
+      "nodeType": "FUNCTION",
+      "position": { "x": 1300, "y": 200 },
+      "parameters": {
+        "functionName": "Reactions.sendText",
+        "text": "{{ Context.getLastFunctionResult() }}"
+      }
+    }
+  ]
+}
