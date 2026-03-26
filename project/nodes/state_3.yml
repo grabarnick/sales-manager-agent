@@ -1,10 +1,20 @@
 ---
 id: "state_3"
-nodeName: "Вебхук"
-nodeType: "TRIGGER_WEBHOOK"
+nodeName: "Распознавание речи"
+nodeType: "FUNCTION"
 position:
-  x: 100
-  "y": -14
-nextStep: "state_5"
-parameters: !<TRIGGER_WEBHOOK>
-  url: "https://dev27.lo.test-ai.net/api/text-campaign-service/scenario-triggers/9ed35dbc-0eb4-4bbf-8211-6ab06a9fb9a6/invoke"
+  x: 700
+  "y": 100
+nextStep: "state_4"
+parameters: !<FUNCTION>
+  functionId: "system.Asr.recognize"
+  isTool: false
+  isSystem: true
+  parameters:
+    asrIntegrationKey: !<STRING>
+      value: "openai_whisper"
+      filledAi: false
+    audioUrl: !<STRING>
+      value: "{{ Context.getMessageContent().files.find(f => f.type === 'audio').url }}"
+      filledAi: false
+  contextConfig: null

@@ -1,0 +1,13 @@
+---
+name: "createLead"
+collectionName: "amoCRM"
+description: "Создание новой сделки в AmoCRM"
+parameters:
+  - name: "name"
+    type: "STRING"
+    required: true
+    description: "Название сделки"
+  - name: "price"
+    type: "NUMBER"
+    required: false
+    description: "Бюджет сделки"

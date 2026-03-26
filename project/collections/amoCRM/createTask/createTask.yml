@@ -1,0 +1,17 @@
+---
+name: "createTask"
+collectionName: "amoCRM"
+description: "Создание задачи (напоминания) в AmoCRM"
+parameters:
+  - name: "text"
+    type: "STRING"
+    required: true
+    description: "Текст задачи"
+  - name: "complete_till"
+    type: "NUMBER"
+    required: true
+    description: "Unix timestamp, до которого нужно выполнить задачу"
+  - name: "entity_id"
+    type: "NUMBER"
+    required: false
+    description: "ID сущности (сделки или контакта), к которой привязана задача"

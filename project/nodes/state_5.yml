@@ -1,42 +1,16 @@
 ---
 id: "state_5"
-nodeName: "Агент"
-nodeType: "AGENT"
+nodeName: "Ответ пользователю"
+nodeType: "FUNCTION"
 position:
-  x: 559
-  "y": 202
-nextStep: "state_7"
-parameters: !<AGENT>
-  systemPromts:
-    role: "role"
-    goal: "goal"
-    instructions: "instructions"
-    queryOverride: null
-  llmSettings:
-    maxTokens: 4000
-    temperature: 1.0
-    topP: 1.0
-    frequencyPenalty: 0.0
-    presencePenalty: 0.0
-    verboseMode: true
-  llmModelKey: "1000001-open_ai_gpt5mini-bse"
-  tools:
-  - "state_8"
-  handoffAgents:
-    allowedAny: true
-    allowedAgentNodeIds: []
-  stayInAgent: true
-  telephonyConfig:
-    enabled: true
-    llmResponseTimeoutMs: 10000
-    bargeInConfig:
-      bargeIn: "FORCED"
-      bargeInTrigger: "FINAL"
-      noInterruptTime: 500
-    fillersPhraseConfig:
-      activationDelayMs: 1000
-      fillerPhrasesList:
-      - "Wait for it"
-  enableContext: true
-  chatHistoryLimit: 50
-  sequentialToolCallsLimit: 5
+  x: 1300
+  "y": 200
+parameters: !<FUNCTION>
+  functionId: "system.Reactions.sendText"
+  isTool: false
+  isSystem: true
+  parameters:
+    text: !<STRING>
+      value: "{{ Context.getLastFunctionResult() }}"
+      filledAi: false
+  contextConfig: null
