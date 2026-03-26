@@ -1,0 +1,17 @@
+---
+id: "state_8"
+nodeName: "getInfo"
+nodeType: "FUNCTION"
+position:
+  x: 581
+  "y": 497
+nextStep: null
+parameters: !<FUNCTION>
+  functionId: "69c52b5d8a4bc74c25b14a65"
+  isTool: true
+  isSystem: false
+  parameters:
+    id: !<NUMBER>
+      value: null
+      filledAi: true
+  contextConfig: null

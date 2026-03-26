@@ -1,11 +1,14 @@
 ---
 id: "state_2"
-nodeName: "Проверка на голос"
-nodeType: "CONDITION"
+nodeName: "Планировщик"
+nodeType: "TRIGGER_SCHEDULE"
 position:
-  x: 400
-  "y": 200
-nextStep: "state_3"
-parameters: !<CONDITION>
-  condition: "!!Context.getMessageContent().files?.find(f => f.type === 'audio')"
-  falseStep: "state_4"
+  x: 105
+  "y": 346
+nextStep: "state_5"
+parameters: !<TRIGGER_SCHEDULE>
+  intervalSeconds: 1800
+  cron: null
+  maxRepeatCount: 7
+  endAfterDate: null
+  startDateTime: "2026-03-26T12:35:35.171Z"

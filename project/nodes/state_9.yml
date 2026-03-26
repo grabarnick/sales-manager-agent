@@ -1,0 +1,29 @@
+---
+id: "state_9"
+nodeName: "Email.send"
+nodeType: "FUNCTION"
+position:
+  x: 1540
+  "y": 285
+nextStep: null
+parameters: !<FUNCTION>
+  functionId: "2d0e83acd0863ae64a78b076"
+  isTool: false
+  isSystem: true
+  parameters:
+    smtpIntegration: !<INTEGRATION_SMTP>
+      value: "1000001-myemail-wxf"
+      filledAi: false
+    recipients: !<ARRAY>
+      value: null
+      items:
+      - !<STRING>
+        value: "agrabarnick@gmail.com"
+      filledAi: false
+    subject: !<STRING>
+      value: "hello"
+      filledAi: false
+    content: !<STRING>
+      value: "hello again"
+      filledAi: false
+  contextConfig: null
