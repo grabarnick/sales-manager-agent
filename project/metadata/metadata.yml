@@ -1,9 +1,9 @@
 ---
 exportVersion: "3"
-exportedAt: "2026-03-26T15:15:00.000Z"
-projectId: "sales_manager_v3"
-projectName: "Sales Manager Assistant"
+exportedAt: "2026-03-26T15:35:00.000Z"
+projectId: "sales_manager_skeleton"
+projectName: "Sales Manager Skeleton"
 accountId: 1000001
 language: "ru"
 timezone: "Europe/Moscow"
-importInstructions: "Detailed import instructions for Sales Manager v3."
+importInstructions: "Minimal skeleton for platform validation."
