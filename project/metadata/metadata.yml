@@ -1,8 +1,8 @@
 ---
-exportVersion: "3"
-exportedAt: "2026-03-26T12:16:24.560239940Z"
-projectId: "grabarnick_test-1000001-wvG"
-projectName: "Sales Manager Assistant"
+exportVersion: "2"
+exportedAt: "2026-03-26T12:35:59.935201280Z"
+projectId: "sales_test-1000001-ius"
+projectName: "sales_test-1000001-ius"
 accountId: 1000001
 language: "ru"
 timezone: "Europe/Moscow"
